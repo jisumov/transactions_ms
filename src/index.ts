@@ -1,10 +1,11 @@
 import express from 'express';
 import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
+import path from 'path';
 
 const app = express();
 const PORT = 3000;
-const dbPath = 'transactions.db'; // Path to the SQLite database file
+const dbPath = path.join(__dirname, 'transactions.db'); // Path to the SQLite database file
 
 // Create database instance
 const initializeDatabase = async () => {
